@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name" translatable="false">Joy Point</string>
+    <string name="comenzar">Ir al mapa del alma</string>
+    <string name="nombre">Nombre</string>
+    <string name="fraseCarlJung">"El encuentro de dos personalidades es como el contacto de dos sustancias químicas: si hay alguna reacción, ambas se transforman." </string>
+    <string name="inicio">Bienvenido a tu Yo interior</string>
+    <string name="localizacion">Busque el memo por la localización</string>
+    <string name="labelBuscar">Buscar</string>
+    <string name="labelAnadir">Añadir</string>
+    <string name="labelBorrar">Borrar</string>
+    <string name="labelEditar">Editar</string>
+    <string name="labelGuardar">Guardar</string>
+    <string name="labelCancelar">Cancelar</string>
+    <string name="labelVer">Visualizar</string>
+    <string name="eligeAcompanado">¿Te acompañaba alguien?</string>
+    <string name="solo">Solo</string>
+    <string name="acompanado">Con gente</string>
+    <string name="eligeSentimiento">¿Cómo te hace sentir este recuerdo?</string>
+    <string name="normal">Normal</string>
+    <string name="triste">Triste</string>
+    <string name="feliz">Feliz</string>
+    <string name="saludo">¡Hola, %1$s!</string>
+    <string name="indicacion">Mantén presionado para elegir</string>
+    <string name="acercaDe">Acerca de...</string>
+    <string name="web">Acceso a web</string>
+    <string name="correo">Correo</string>
+    <string name="comentario">Algo que mencionar...</string>
+    <string name="loc">Lugar donde ocurrió</string>
+    <string name="foto">Tu foto aquí</string>
+    <string name="switchFavoritos">Añadir a favoritos</string>
+    <string name="infoAcerca">Aplicación creada por Silvia Aparicio, estudiante de DAM2</string>
+    <string name="preferenciaAcompanado">Elige si quieres ver memos en los que estabas acompañado</string>
+    <string name="listaAcompanado">Acompañamiento</string>
+    <string name="preferenciaSentimiento">Elige si quieres ver recuerdos felices o no tanto</string>
+    <string name="listaSentimiento">Sentimiento del momento</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="notSet">Sin definir</string>
+    <string name="preferenciaNo">Decide si quieres usar las preferencias</string>
+    <string name="listaNoPref">Sí/No</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="galeria">Galería</string>
+    <string name="verAcompanado">Ese día estabas:</string>
+    <string name="verSentimiento">Ese día se sintió:</string>
+    <string name="labelPref">No disponible</string>
+</resources>

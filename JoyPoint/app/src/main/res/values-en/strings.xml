@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="comenzar">Go to the soul map</string>
+    <string name="nombre">Name</string>
+    <string name="fraseCarlJung">The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed.</string>
+    <string name="inicio">Welcome to your inner Self</string>
+    <string name="localizacion">Search memo by location</string>
+    <string name="labelBuscar">Search</string>
+    <string name="labelAnadir">Add</string>
+    <string name="labelBorrar">Delete</string>
+    <string name="labelEditar">Edit</string>
+    <string name="labelGuardar">Save</string>
+    <string name="labelCancelar">Cancel</string>
+    <string name="labelVer">Visualize</string>
+    <string name="eligeAcompanado">Were you accompanied by someone?</string>
+    <string name="solo">Alone</string>
+    <string name="acompanado">Accompanied</string>
+    <string name="eligeSentimiento">How does this memory make you feel?</string>
+    <string name="normal">Normal</string>
+    <string name="triste">Sad</string>
+    <string name="feliz">Happy</string>
+    <string name="saludo">Welcome, %1$s!</string>
+    <string name="indicacion">Hold down to select</string>
+    <string name="acercaDe">About...</string>
+    <string name="web">Web access</string>
+    <string name="correo">Mail</string>
+    <string name="comentario">Something to mention...</string>
+    <string name="loc">The place where it happened</string>
+    <string name="foto">Your photo here</string>
+    <string name="switchFavoritos">Add to favorites</string>
+    <string name="infoAcerca">App created by Silvia Aparicio, student of DAM2</string>
+    <string name="preferenciaAcompanado">Choose whether you want to see memos in which you were accompanied</string>
+    <string name="listaAcompanado">Company</string>
+    <string name="preferenciaSentimiento">Choose whether you want to see happy memories or not-so-happy ones</string>
+    <string name="listaSentimiento">Memo\'s feeling</string>
+    <string name="preferencias">Preferences</string>
+    <string name="notSet">Not set</string>
+    <string name="preferenciaNo">Decide whether you want to use preferences</string>
+    <string name="listaNoPref">Yes/No</string>
+    <string name="si">Yes</string>
+    <string name="no">No</string>
+    <string name="galeria">Gallery</string>
+    <string name="verAcompanado">That day you were:</string>
+    <string name="verSentimiento">That day felt:</string>
+    <string name="labelPref">Not available</string>
+</resources>

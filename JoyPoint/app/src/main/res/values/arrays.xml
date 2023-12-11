@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="acompanado_entries">
+        <item>@string/solo</item>
+        <item>@string/acompanado</item>
+        <item>@string/notSet</item>
+    </string-array>
+    <string-array name="acompanado_values">
+        <item>@string/solo</item>
+        <item>@string/acompanado</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="sentimiento_entries">
+        <item>@string/feliz</item>
+        <item>@string/normal</item>
+        <item>@string/triste</item>
+        <item>@string/notSet</item>
+    </string-array>
+    <string-array name="sentimiento_values">
+        <item>@string/feliz</item>
+        <item>@string/normal</item>
+        <item>@string/triste</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="noPref_entries">
+        <item>@string/si</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="noPref_values">
+        <item>true</item>
+        <item>false</item>
+        <item></item>
+    </string-array>
+</resources>

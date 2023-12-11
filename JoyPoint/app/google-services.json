@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "187198361515",
+    "project_id": "joypoint-b0256",
+    "storage_bucket": "joypoint-b0256.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187198361515:android:64c56cf2da2bd58ba44cee",
+        "android_client_info": {
+          "package_name": "com.example.joypoint"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAicbo4ZviKxaYPQfTZdpD2UGDyV3UY3wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="topD">#FED9D5</color>
+    <color name="centerD">#FEDDA5</color>
+    <color name="endD">#F97F7A</color>
+    <color name="topN">#784B60</color>
+    <color name="centerN">#F5B3A0</color>
+    <color name="endN">#95A3C0</color>
+    <color name="brown">#775653</color>
+    <color name="text">#E8E4D2</color>
+    <color name="icon">#4A2522</color>
+</resources>

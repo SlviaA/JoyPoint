@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/preferencias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/preferencias"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/acercaDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/acercaDe"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/Web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="@string/web"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ContactarMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="@string/correo"
+        app:showAsAction="never" />
+</menu>

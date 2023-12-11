@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferenciaAcompanado">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="3"
+            android:title="@string/listaAcompanado"
+            app:entries="@array/acompanado_entries"
+            app:entryValues="@array/acompanado_values"
+
+            app:key="acompanado"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferenciaSentimiento">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="4"
+            android:title="@string/listaSentimiento"
+            app:entries="@array/sentimiento_entries"
+            app:entryValues="@array/sentimiento_values"
+
+            app:key="sentimiento"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferenciaNo">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="2"
+            android:title="@string/listaNoPref"
+            app:entries="@array/noPref_entries"
+            app:entryValues="@array/noPref_values"
+
+            app:key="noPref"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>
