@@ -12,7 +12,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -62,7 +61,8 @@ class VisualizarActivity : AppCompatActivity() {
         crearObjetosDelXml()
 
         // Configuración de la toolbar
-        setSupportActionBar(binding.appbar.toolbarAppBottom)
+        setSupportActionBar(binding.appbar.toolbarApp)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // Obtención del nombre desde la actividad anterior
         val nombre = intent.getStringExtra("nombre")
@@ -81,20 +81,7 @@ class VisualizarActivity : AppCompatActivity() {
 
         // Inicialización de operaciones con Firebase Firestore
         operacionesFireStore = OperacionesFireStore("memos", memosProvider, memosAdapter, managerMemo)
-
-        // Obtención de referencias a Button y EditText
-        val btnAnadir = findViewById<Button>(R.id.btnAnadir)
-        val btnGaleria = findViewById<Button>(R.id.btnGaleria)
         val textLocalizacion = findViewById<EditText>(R.id.editLocalizacion)
-
-        // Llamadas a los métodos que abre cada Button
-        btnAnadir.setOnClickListener {
-            openActivityAnadir()
-        }
-
-        btnGaleria.setOnClickListener {
-            openActivityGaleria()
-        }
 
         binding.btnBuscar.setOnClickListener {
             buscarMemosPorLocalizacion(binding.editLocalizacion.text.toString())
@@ -106,39 +93,13 @@ class VisualizarActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val inputText = s.toString()
-                btnAnadir.isEnabled = inputText.isEmpty()
+                //btnAnadir.isEnabled = inputText.isEmpty()
             }
 
             override fun afterTextChanged(s: Editable?) {
             }
         })
 
-        activityResultLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { resultado ->
-                if (resultado.data != null) {
-                    val datos: Intent = resultado.data!!
-                    val id: Int
-
-                    if (datos.hasExtra("id")) {
-                        id = datos.getStringExtra("id")!!.toInt()
-                    } else {
-                        id = memosProvider.getId()
-                    }
-                    var memo = Memo(
-                        id,
-                        datos.getStringExtra("comentarios")!!,
-                        datos.getStringExtra("localizacion")!!,
-                        datos.getStringExtra("acompanado")!!,
-                        datos.getStringExtra("sentimiento")!!,
-                        datos.getStringExtra("foto")!!
-                    )
-                    if (datos.hasExtra("id")) {
-                        operacionesFireStore.updateRegister(posicion, memo)
-                    } else {
-                        operacionesFireStore.insertRegister(memo)
-                    }
-                }
-            }
 
         // Carga de preferencias al iniciar la actividad
         loadPref()
@@ -161,6 +122,35 @@ class VisualizarActivity : AppCompatActivity() {
             .build()
 
         pop = soundPool.load(this, R.raw.pop, 1)
+
+        activityResultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { resultado ->
+                if (resultado.data != null) {
+                    val datos: Intent = resultado.data!!
+                    val id: Int
+
+                    if (datos.hasExtra("id")) {
+                        id = datos.getStringExtra("id")!!.toInt()
+                    } else {
+                        id = memosProvider.getId()
+                    }
+                    var memo = Memo(
+                        id,
+                        datos.getStringExtra("comentarios")!!,
+                        datos.getStringExtra("localizacion")!!,
+                        datos.getStringExtra("tituloLoc")!!,
+                        datos.getStringExtra("foto")!!,
+                        datos.getStringExtra("video")!!,
+                        datos.getStringExtra("audio")!!
+                    )
+                    if (datos.hasExtra("id")) {
+                        operacionesFireStore.updateRegister(posicion, memo)
+                    } else {
+                        operacionesFireStore.insertRegister(memo)
+                    }
+                }
+            }
+
     }
 
     /**
@@ -175,7 +165,7 @@ class VisualizarActivity : AppCompatActivity() {
      * Crea y muestra el menú de opciones en la barra de acción
      */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_visualizar, menu)
         return true
     }
 
@@ -193,6 +183,10 @@ class VisualizarActivity : AppCompatActivity() {
         filtrarRegistros(preferenciaAcompanado, preferenciaSentimiento, elegirPreferencias.toString())
     }
 
+    /**
+     * Funcion para indicar el sonido de los botones
+     *
+     */
     fun playSound(){
         soundPool.play(pop, 10F, 10F, 1, 0, 1F)
     }
@@ -259,22 +253,6 @@ class VisualizarActivity : AppCompatActivity() {
     }
 
     /**
-     * Abre la actividad para añadir un nuevo memo
-     */
-    fun openActivityAnadir() {
-        val intent = Intent(this, AnadirActivity::class.java)
-        activityResultLauncher.launch(intent)
-    }
-
-    /**
-     * Abre la actividad de la galería de fotos
-     */
-    fun openActivityGaleria() {
-        val intent = Intent(this, GaleriaActivity::class.java)
-        activityResultLauncher.launch(intent)
-    }
-
-    /**
      * Abre la actividad de edición con los datos del memo elegido
      */
     fun openActivityEditar(posicion: Int, memo: Memo) {
@@ -285,9 +263,10 @@ class VisualizarActivity : AppCompatActivity() {
         intent.putExtra("id", memo.id.toString())
         intent.putExtra("comentarios", memo.comentarios)
         intent.putExtra("localizacion", memo.localizacion)
-        intent.putExtra("acompanado", memo.acompanado)
-        intent.putExtra("sentimiento", memo.sentimiento)
+        intent.putExtra("tituloLoc", memo.tituloLoc)
         intent.putExtra("foto", memo.foto)
+        intent.putExtra("video", memo.video)
+        intent.putExtra("audio", memo.audio)
 
         activityResultLauncher.launch(intent)
     }
@@ -300,12 +279,28 @@ class VisualizarActivity : AppCompatActivity() {
 
         this.posicion = posicion
 
-        intent.putExtra("id", memo.id.toString())
+        intent.putExtra("id", memo.id)
         intent.putExtra("comentarios", memo.comentarios)
         intent.putExtra("localizacion", memo.localizacion)
-        intent.putExtra("acompanado", memo.acompanado)
-        intent.putExtra("sentimiento", memo.sentimiento)
         intent.putExtra("foto", memo.foto)
+        intent.putExtra("video", memo.video)
+        intent.putExtra("audio", memo.audio)
+
+        activityResultLauncher.launch(intent)
+    }
+
+    fun openVerMapa(posicion: Int, memo: Memo) {
+        val intent = Intent(this, VerMapaActivity::class.java)
+
+        this.posicion = posicion
+
+        intent.putExtra("id", memo.id)
+        intent.putExtra("comentarios", memo.comentarios)
+        intent.putExtra("localizacion", memo.localizacion)
+        intent.putExtra("tituloLoc", memo.tituloLoc)
+        intent.putExtra("foto", memo.foto)
+        intent.putExtra("video", memo.video)
+        intent.putExtra("audio", memo.audio)
 
         activityResultLauncher.launch(intent)
     }
@@ -315,6 +310,16 @@ class VisualizarActivity : AppCompatActivity() {
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.anadir -> {
+                openActivityAnadir()
+                true
+            }
+
+            R.id.galeria -> {
+                openActivityGaleria()
+                true
+            }
+
             R.id.preferencias -> {
                 abrirPreferencias()
                 activityResultPreferencias
@@ -338,6 +343,22 @@ class VisualizarActivity : AppCompatActivity() {
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    /**
+     * Abre la actividad para añadir un nuevo memo
+     */
+    fun openActivityAnadir() {
+        val intent = Intent(this, AnadirActivity::class.java)
+        activityResultLauncher.launch(intent)
+    }
+
+    /**
+     * Abre la actividad de la galería de fotos
+     */
+    fun openActivityGaleria() {
+        val intent = Intent(this, GaleriaActivity::class.java)
+        activityResultLauncher.launch(intent)
     }
 
     /**
@@ -444,7 +465,9 @@ class VisualizarActivity : AppCompatActivity() {
                 )
             },
             openActivityEditar = { posicion: Int, memo: Memo -> openActivityEditar(posicion, memo) },
-            openVerMemo = { posicion: Int, memo: Memo -> openVerMemo(posicion, memo) } //Funciones lambda: Indicamos los tipos de los parámetros de entrada y luego se lo indicamos con ->
+            openVerMemo = { posicion: Int, memo: Memo -> openVerMemo(posicion, memo) },
+            openVerMapa = { posicion: Int, memo: Memo -> openVerMapa(posicion, memo) },
+            playSound = { -> playSound()}//Funciones lambda: Indicamos los tipos de los parámetros de entrada y luego se lo indicamos con ->
         )
 
         myCollection

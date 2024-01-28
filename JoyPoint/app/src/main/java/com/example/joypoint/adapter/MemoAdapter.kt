@@ -13,7 +13,9 @@ class MemoAdapter(
     private val memosList: MutableList<Memo>,
     private val deleteRegister: (Int, Int) -> Unit,
     private val openActivityEditar: (Int, Memo) -> Unit,
-    private val openVerMemo: (Int, Memo) -> Unit
+    private val openVerMemo: (Int, Memo) -> Unit,
+    private val openVerMapa: (Int, Memo) -> Unit,
+    private val playSound: () -> Unit
 ) : RecyclerView.Adapter<MemoViewHolder>() {
 
     /**
@@ -36,7 +38,7 @@ class MemoAdapter(
      */
     override fun onBindViewHolder(memosViewHolder: MemoViewHolder, position: Int) {
         val memo = memosList[position]
-        memosViewHolder.render(memo, deleteRegister, openActivityEditar, openVerMemo)
+        memosViewHolder.render(memo, deleteRegister, openActivityEditar, openVerMemo, openVerMapa, playSound)
     }
 
     /**

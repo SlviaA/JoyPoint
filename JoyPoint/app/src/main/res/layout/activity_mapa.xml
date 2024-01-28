@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapaActivity">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="370dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLocElegir" />
+
+    <Button
+        android:id="@+id/btnLocActual"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:onClick="usarLocalizacion"
+        android:text="Usar localización"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/btnLocElegir"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitulo" />
+
+    <Button
+        android:id="@+id/btnLocElegir"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:onClick="añadirAccionesMapa"
+        android:text="Elegir localización"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGuardar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLocActual"
+        app:layout_constraintTop_toTopOf="@+id/btnLocActual" />
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="false"
+        android:text="Guardar"
+        android:textColor="@color/text"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLocElegir"
+        app:layout_constraintTop_toTopOf="@+id/btnLocElegir" />
+
+    <EditText
+        android:id="@+id/editTitulo"
+        android:layout_width="368dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:hint="Pon un nombre al recuerdo"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

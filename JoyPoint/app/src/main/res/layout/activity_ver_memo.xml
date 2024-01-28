@@ -27,104 +27,109 @@
         app:srcCompat="@drawable/fondo"
         tools:layout_editor_absoluteX="11dp" />
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/playButton"
+                android:backgroundTint="@color/brown"
+                app:iconTint="@color/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                app:srcCompat="@drawable/play" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/pauseButton"
+                android:backgroundTint="@color/brown"
+                app:iconTint="@color/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:enabled="false"
+                app:srcCompat="@drawable/ic_baseline_pause_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/stopButton"
+                android:backgroundTint="@color/brown"
+                app:iconTint="@color/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:enabled="false"
+                app:srcCompat="@drawable/ic_baseline_stop_24" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="185dp"
-        android:layout_height="183dp"
-        android:layout_marginTop="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonReproducirVideo"
+        app:layout_constraintVertical_bias="0.03"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/viewComentarios"
+    <VideoView
+        android:id="@+id/videoView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="89dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginBottom="71dp"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:maxLines="10"
-        android:scrollbars="vertical"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:layout_height="188dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/viewLocalizacion"
+        android:id="@+id/txtComentario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="39dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/editAcompanado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/verAcompanado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <TextView
-        android:id="@+id/viewAcompanado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="356dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAcompanado"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/editSentimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/verSentimiento"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
-
-    <TextView
-        android:id="@+id/viewSentimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editSentimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
-        android:id="@+id/btnCancelar"
-        style="?attr/materialIconButtonStyle"
+        android:id="@+id/botonReproducirVideo"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:textColor="@color/text"
+        android:backgroundTint="@color/brown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/labelCancelar"
-        app:icon="@android:drawable/ic_menu_revert"
-        app:iconSize="40dp"
-        app:iconTint="@color/icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        android:text="Reproduce el recuerdo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

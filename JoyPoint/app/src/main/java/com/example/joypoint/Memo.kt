@@ -7,7 +7,8 @@ data class Memo (
     var id: Int = 0,
     val comentarios: String="",
     val localizacion: String="",
-    val acompanado: String="",
-    val sentimiento: String="",
-    val foto: String=""
+    val tituloLoc: String="",
+    var foto: String="",
+    var video: String="",
+    var audio: String=""
 )

@@ -27,10 +27,11 @@ class MemoViewHolder (view: View): RecyclerView.ViewHolder (view) {
         memo: Memo,
         deleteRegister: (Int, Int) -> Unit,
         openActivityEditar: (Int, Memo) -> Unit,
-        openVerMemo: (Int, Memo) -> Unit
+        openVerMemo: (Int, Memo) -> Unit,
+        openVerMapa: (Int, Memo) -> Unit,
+        playSound: () -> Unit
     ) {
         binding.viewComentarios.text = memo.comentarios
-        binding.viewLocalizacion.text = memo.localizacion
         Glide.with(binding.imageViewFoto.context)
             .load(memo.foto)
             .into(binding.imageViewFoto)
@@ -54,18 +55,16 @@ class MemoViewHolder (view: View): RecyclerView.ViewHolder (view) {
         }
 
         binding.btnEliminar.setOnClickListener {
-            borrar=1
-            Log.d(":::", "FUNCIONA")
+            playSound()
             deleteRegister(adapterPosition, memo.id)
-        }
-
-
-        binding.btnEditar.setOnClickListener {
-            openActivityEditar(adapterPosition, memo)
         }
 
         binding.btnVer.setOnClickListener{
             openVerMemo(adapterPosition, memo)
+        }
+
+        binding.btnMapa.setOnClickListener {
+            openVerMapa(adapterPosition, memo)
         }
     }
 }

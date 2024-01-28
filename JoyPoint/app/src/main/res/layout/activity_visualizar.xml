@@ -20,7 +20,7 @@
 
     <include
         android:id="@+id/appbar"
-        layout="@layout/toolbar_bottom"/>
+        layout="@layout/toolbar"/>
 
     <EditText
         android:id="@+id/editLocalizacion"

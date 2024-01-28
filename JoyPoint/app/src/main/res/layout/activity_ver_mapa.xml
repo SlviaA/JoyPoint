@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerMapaActivity">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="370dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCambiarMapa" />
+
+
+    <Button
+        android:id="@+id/btnCambiarMapa"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="105dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:onClick="cambiarMapa"
+        android:text="Cambiar mapa"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBuscar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonBuscar"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:textColor="@color/text"
+        app:srcCompat="@android:drawable/ic_menu_search"
+        app:iconTint="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBrujula"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCambiarMapa"
+        app:layout_constraintTop_toTopOf="@+id/btnCambiarMapa" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonBrujula"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:textColor="@color/text"
+        app:srcCompat="@android:drawable/ic_menu_compass"
+        app:iconTint="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRuta"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonBuscar"
+        app:layout_constraintTop_toTopOf="@+id/buttonBuscar" />
+
+    <Button
+        android:id="@+id/buttonRuta"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/brown"
+        android:enabled="true"
+        android:text="Activar Ruta"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonBrujula"
+        app:layout_constraintTop_toTopOf="@+id/buttonBrujula" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

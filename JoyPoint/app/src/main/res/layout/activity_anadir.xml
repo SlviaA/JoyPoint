@@ -16,18 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageViewFoto"
-        android:layout_width="129dp"
-        android:layout_height="147dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editComentario"
@@ -37,115 +26,159 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewFoto"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />
-
-    <EditText
-        android:id="@+id/editLocalizacion"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:hint="@string/loc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editComentario"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <EditText
-        android:id="@+id/editTextEnlaceFoto"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:hint="@string/foto"
-        android:verticalScrollbarPosition="right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editSentimiento"
-        app:layout_constraintVertical_bias="0.10" />
 
     <Button
         android:id="@+id/btnGuardar"
         style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="66dp"
         android:contentDescription="@string/labelGuardar"
         app:icon="@android:drawable/ic_menu_save"
         app:iconSize="40dp"
         app:iconTint="@color/icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextEnlaceFoto"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="@+id/editTextEnlaceFoto"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEnlaceFoto"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAudio"
+        app:layout_constraintTop_toBottomOf="@+id/btnAudio"
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:id="@+id/btnCancelar"
         style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="66dp"
         android:contentDescription="@string/labelCancelar"
         app:icon="@android:drawable/ic_menu_revert"
         app:iconSize="40dp"
         app:iconTint="@color/icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextEnlaceFoto"
+        app:layout_constraintEnd_toStartOf="@+id/btnAudio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAudio"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Button
+        android:id="@+id/btnFoto"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/brown"
+        android:text="Foto"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btnVideo"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Abrir galería"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+    <Button
+        android:id="@+id/btnAudio"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Audio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="270dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFoto" />
+
+    <Button
+        android:id="@+id/playButton"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:icon="@drawable/play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVideo" />
+
+    <Button
+        android:id="@+id/pauseButton"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:icon="@drawable/ic_baseline_pause_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGrabar" />
+
+    <Button
+        android:id="@+id/buttonGrabar"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="comenzarGrabacion"
+        android:text="Grabar video"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@+id/editTextEnlaceFoto"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEnlaceFoto"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
 
-    <TextView
-        android:id="@+id/viewCompania"
+    <Button
+        android:id="@+id/btnMapa"
+        style="?attr/materialIconButtonFilledTonalStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/eligeAcompanado"
+        android:backgroundTint="@color/brown"
+        app:icon="@android:drawable/ic_dialog_map"
+        app:iconTint="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editComentario"
+        app:layout_constraintTop_toBottomOf="@+id/editComentario"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/txtUbicacion"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:text="Localización"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editLocalizacion"
-        app:layout_constraintTop_toBottomOf="@+id/editLocalizacion"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <EditText
-        android:id="@+id/editAcompanado"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/indicacion"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewCompania"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <TextView
-        android:id="@+id/viewSentimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/eligeSentimiento"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editAcompanado"
-        app:layout_constraintTop_toBottomOf="@+id/editAcompanado"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <EditText
-        android:id="@+id/editSentimiento"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/indicacion"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewSentimiento"
-        app:layout_constraintVertical_bias="0.05" />
-
+        app:layout_constraintStart_toStartOf="@+id/editComentario"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

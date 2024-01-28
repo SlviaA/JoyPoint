@@ -15,50 +15,51 @@
 
     <TextView
         android:id="@+id/viewComentarios"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="205dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="5dp"
         android:text="TextView"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFoto"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/viewLocalizacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="205dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="@+id/viewComentarios"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewFoto"
-        app:layout_constraintTop_toBottomOf="@+id/viewComentarios" />
-
     <Button
-        android:id="@+id/btnEditar"
+        android:id="@+id/btnMapa"
         style="?attr/materialIconButtonFilledTonalStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/brown"
-        android:contentDescription="@string/labelEditar"
-        app:icon="@android:drawable/ic_menu_edit"
+        android:contentDescription="@string/labelVer"
+        app:icon="@android:drawable/ic_dialog_map"
         app:iconTint="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEliminar" />
+        app:layout_constraintEnd_toStartOf="@+id/btnVer"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFoto"/>
+
+    <Button
+        android:id="@+id/btnVer"
+        style="?attr/materialIconButtonFilledTonalStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/brown"
+        android:contentDescription="@string/labelVer"
+        app:icon="@android:drawable/ic_menu_view"
+        app:iconTint="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEliminar"
+        app:layout_constraintStart_toEndOf="@+id/btnMapa"/>
 
     <Button
         android:id="@+id/btnEliminar"
         style="?attr/materialIconButtonFilledTonalStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/brown"
         android:contentDescription="@string/labelBorrar"
         android:onClick="playSound"
@@ -66,20 +67,7 @@
         app:icon="@android:drawable/ic_menu_delete"
         app:iconTint="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/viewLocalizacion" />
-
-    <Button
-        android:id="@+id/btnVer"
-        style="?attr/materialIconButtonFilledTonalStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/brown"
-        android:contentDescription="@string/labelVer"
-        app:icon="@android:drawable/ic_menu_view"
-        app:iconTint="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEditar" />
+        app:layout_constraintEnd_toEndOf="@+id/viewComentarios"
+        app:layout_constraintStart_toEndOf="@+id/btnVer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
